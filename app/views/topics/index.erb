@@ -1,8 +1,12 @@
 LOGIN
 <%= erb :"/users/new" %>
 
-TOPICS
+TOPIC
+
+<ul>
 <% @topics.each do | topic | %>
-  <%= topics.heading %>
-  <%= topics.description %>
+  <li> <a href="/topics/<%=topic.id%>"> <%= topic.heading %> </a> </li>
 <% end %>
+</ul>
+
+
