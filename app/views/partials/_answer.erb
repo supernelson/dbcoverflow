@@ -1,0 +1,8 @@
+<div class='answer-container'>
+  <div class='answer'>
+    <p><%= answer.description %></p>
+  </div>
+  <div class='comment-container'>
+    <%= erb :"_comments", layout: false, locals: {comments: answer.comments} %>
+  </div>
+</div>

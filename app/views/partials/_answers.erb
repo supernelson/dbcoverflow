@@ -1,0 +1,5 @@
+<div class='answers-container'>
+  <% answers.each do |answer| %>
+    <%= erb :"/partials/_answer", layout: false, locals: {answer: answer} %>
+  <% end %>
+</div>
