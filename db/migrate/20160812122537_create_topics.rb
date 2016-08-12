@@ -6,6 +6,7 @@ class CreateTopics < ActiveRecord::Migration
   		t.references :user
 
   		t.timestamps(null: false)
-    end
+  	end
+
   end
 end
