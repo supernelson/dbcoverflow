@@ -1,8 +1,6 @@
-LOGIN
-<%= erb :"/users/new" %>
 
 TOPICS
 <% @topics.each do | topic | %>
-  <%= topics.heading %>
-  <%= topics.description %>
+  <%= topic.heading %>
+  <%= topic.description %>
 <% end %>
