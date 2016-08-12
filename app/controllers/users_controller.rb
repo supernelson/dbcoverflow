@@ -1,31 +1,31 @@
 # Users INDEX
-get '/users' do
+get "/users" do
   @users = User.all
-  erb :'users/index'
+  erb :"users/index"
 end
 
 # Users NEW
-get '/users/new' do
-  erb :'users/new'
+get "/users/new" do
+  erb :"users/new"
 end
 
 # Users SHOW
-get '/users/:id' do
+get "/users/:id" do
   @user = User.find(params[:id])
-  erb :'users/show'
+  erb :"users/show"
 end
 
 # Users EDIT
-get '/users/:id/edit' do
+get "/users/:id/edit" do
   @user = User.find(params[:id])
-  erb :'users/edit'
+  erb :"users/edit"
 end
 
 # Users CREATE
-post '/users' do
+post "/users" do
   if params[:user][:password] != params[:password_confirmation]
     @errors = ["passwords need to match MOFO"]
-    erb :'users/new'
+    erb :"users/new"
   else
     @user = User.new(params[:user])
     if @user.save
@@ -33,20 +33,20 @@ post '/users' do
       redirect "/users/#{@user.id}"
     else
       @errors = @user.errors.full_messages
-      erb :'users/new'
+      erb :"users/new"
     end
   end
 end
 
 # Users UPDATE
-put '/users/:id' do
+put "/users/:id" do
   @user = User.find(params[:id])
   @user.update(params[:user])
   redirect "/users/#{@user.id}"
 end
 
 # Users DELETE
-delete '/users/:id' do
+delete "/users/:id" do
   @user = User.find(params[:id])
   @user.destroy
   redirect "/users"
