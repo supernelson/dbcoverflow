@@ -6,5 +6,6 @@ class CreateVotes < ActiveRecord::Migration
   		t.references :answer
 
   		t.timestamps(null: false)
+    end
   end
 end

@@ -12,13 +12,13 @@ end
 	Answer.create(topic: rand(1..5), description: Faker::Lorem.paragraph, user: rand(1..5) )
 end
 
-
 20.times do |comment|
 	Comment.create(description: Faker::Lorem.paragraph, user: rand(1..5), topic: rand(1..5))
+end
 
 20.times do |comment|
 	Comment.create(description: Faker::Lorem.paragraph, user: rand(1..5), answer: rand(1..10))
-
+end
 
 20.times do |vote|
 	Vote.create(user: rand(1..5), topic: rand(1..5))
