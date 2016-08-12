@@ -5,8 +5,8 @@ end
 
 # Sessions CREATE
 post "/sessions" do
-  @user = User.find_by_email(params[:email])
-  if @user && @user.authenticate(params[:password])
+  @user = User.find_by(username: params[:user][:username])
+  if @user && @user.authenticate(params[:user][:password])
     session[:id] = @user.id
     redirect "/users/#{@user.id}"
   else
