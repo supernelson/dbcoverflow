@@ -1,2 +1,9 @@
 <h1>Hi <%= @user.username %>!</h1>
 <a href="/">Home</a>
+
+<% if current_user %>
+  <form action="/sessions" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Logout">
+  </form>
+<% end %>
