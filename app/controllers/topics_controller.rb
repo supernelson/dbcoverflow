@@ -8,9 +8,15 @@ get "/topics/new" do
 end
 
 post "/topics" do
-  # redirect to where?
+  topic = Topic.new(params[:topic])
+  if topic.save
+    redirect "/topics/#{topic.id}"
+  else
+    @errors = ["Failed to create topic"]
+  end
 end
 
 get "/topics/:id" do
-  erb :"/topics/show"
+  topic = Topic.find(params[:id])
+  erb :"/topics/show", locals: {topic: topic}
 end

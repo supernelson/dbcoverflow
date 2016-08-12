@@ -18,6 +18,18 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <nav id='menu'>
+    <% if !@current_user %>
+      <a href='/sessions/new'>Login</a>
+      <a href='/users/new'>Registration</a>
+      <a href='/'>Home</a>
+    <% else %>
+      <a href='#'>My topics</a>
+      <a href='/'>Home</a>
+    <% end %>
+  </nav>
+  <div class='content'>
+    <%= yield %>
+  </div>
 </body>
 </html>

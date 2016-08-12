@@ -1,1 +1,8 @@
-Specific Topic
+<div class='show-page-container'>
+  <div class='question-container'>
+    <%= erb :"/partials/_question", layout: false, locals: {question: topic.question} %>
+  </div>
+  <div class='answers-container'>
+    <%= erb :"/partials/_answers", layout: false, locals: {answers: topic.answers} %>
+  </div>
+</div>
